@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        Chapter1(this, window.decorView.findViewById(android.R.id.content))
+        Chapter1(this, window.decorView.findViewById(android.R.id.content),this)
 
 
 

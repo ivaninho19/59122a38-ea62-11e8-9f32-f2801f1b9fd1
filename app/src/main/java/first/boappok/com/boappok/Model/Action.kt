@@ -1,11 +1,12 @@
 package first.boappok.com.boappok.Model
 
+import android.databinding.ObservableBoolean
 import java.util.*
 
 class Action {
 
     var actionType : ActionEnum? = null
-
+    var actionCompleted : ObservableBoolean = ObservableBoolean(false)
 
     var  resource : Any? = null
 
