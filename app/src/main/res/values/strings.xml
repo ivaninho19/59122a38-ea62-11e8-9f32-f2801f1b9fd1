@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">BoAppok</string>
+    <string name="action_textcenter_Name">Texto en el centro</string>
+    <string name="action_textcenter_Description">Escribe un texto que se muestra en el centro de la pantalla</string>
+    <string name="action_textdown_Name">Texto abajo</string>
+    <string name="action_textdown_Description">Escribe un texto que se muestra en la parte baja de la pantalla</string>
+    <string name="action_imagecenter_Name">Imagen en el centro</string>
+    <string name="action_imagecenter_Description">Pon una imagen en el centro de la pantalla</string>
+    <string name="action_imagecenterclear_Description">Borra la imagen del centro de la pantalla</string>
+    <string name="action_imagecenterclear_Name">Limpiar imagen centro</string>
+
+
 </resources>

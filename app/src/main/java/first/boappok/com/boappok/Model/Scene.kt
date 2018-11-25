@@ -5,9 +5,10 @@ import android.app.Application
 import android.content.Context
 import android.databinding.Observable
 import android.databinding.ObservableBoolean
+import android.util.Log
 import android.view.View
 import first.boappok.com.boappok.Composer
-
+import java.lang.Exception
 
 
 open class Scene {
@@ -67,43 +68,51 @@ open class Scene {
     fun ExecuteAction(action:Action)
     {
 
-        val composer  = Composer(ctx,view)
+        try{
+            val composer  = Composer(ctx,view)
 
-        when(action.actionType)
+            when(action.actionType)
+            {
+                ActionEnum.PlayMedia -> composer.PlayMedia(action)
+
+                ActionEnum.SetDownText -> composer.SetDownText(action)
+
+                ActionEnum.DelayTime -> composer.SetDelay(action)
+
+                ActionEnum.SetBackgroundPrincipal -> composer.SetBackgroundColorPrincipalCL(action)
+
+                ActionEnum.SetImageCenter -> composer.SetImageCenter(action)
+
+                ActionEnum.ClickContinue -> composer.ClickContinue(action)
+
+                ActionEnum.SetImageLeft -> composer.SetLeftImage(action)
+
+                ActionEnum.SetImageRight -> composer.SetRightImage(action)
+
+                ActionEnum.SetTextCenter -> composer.SetCenterText(action)
+
+                ActionEnum.ClearBackgroundPrincipal -> composer.ClearBackgroundColorPrincipalCL(action)
+
+                ActionEnum.ClearImageCenter -> composer.ClearImageCenter(action)
+
+                ActionEnum.ClearImageLeft -> composer.ClearImageLeft(action)
+
+                ActionEnum.ClearImageRight -> composer.ClearImageRight(action)
+
+                ActionEnum.SetCenterImage -> composer.SetImageCenter(action)
+
+                ActionEnum.ClearImageTop -> composer.ClearImageTop(action)
+
+                ActionEnum.SetImageTop -> composer.SetImageTop(action)
+
+            }
+
+        }catch(ex:Exception)
         {
-            ActionEnum.PlayMedia -> composer.PlayMedia(action)
-
-            ActionEnum.SetDownText -> composer.SetDownText(action)
-
-            ActionEnum.DelayTime -> composer.SetDelay(action)
-
-            ActionEnum.SetBackgroundPrincipal -> composer.SetBackgroundColorPrincipalCL(action)
-
-            ActionEnum.SetImageCenter -> composer.SetImageCenter(action)
-
-            ActionEnum.ClickContinue -> composer.ClickContinue(action)
-
-            ActionEnum.SetImageLeft -> composer.SetLeftImage(action)
-
-            ActionEnum.SetImageRight -> composer.SetRightImage(action)
-
-            ActionEnum.SetTextCenter -> composer.SetCenterText(action)
-
-            ActionEnum.ClearBackgroundPrincipal -> composer.ClearBackgroundColorPrincipalCL(action)
-
-            ActionEnum.ClearImageCenter -> composer.ClearImageCenter(action)
-
-            ActionEnum.ClearImageLeft -> composer.ClearImageLeft(action)
-
-            ActionEnum.ClearImageRight -> composer.ClearImageRight(action)
-
-            ActionEnum.SetCenterImage -> composer.SetImageCenter(action)
-
-            ActionEnum.ClearImageTop -> composer.ClearImageTop(action)
-
-            ActionEnum.SetImageTop -> composer.SetImageTop(action)
-
+            Log.i("ex:",ex.message)
         }
+
+
     }
 
 

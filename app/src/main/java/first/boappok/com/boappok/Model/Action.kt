@@ -11,6 +11,7 @@ class Action {
     var  resource : Any? = null
 
 
+    constructor()
 
     constructor(actionType : ActionEnum, resource: Any  )
     {
