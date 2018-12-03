@@ -30,6 +30,11 @@ class ActionsRepository {
                 Action(ActionEnum.ClearImageCenter,""),ActionDescription.ActionContentType.Image))
 
 
+            result.add(ActionDescription(ctx.resources.getString(R.string.action_clickContinue_name),
+                ctx.resources.getString(R.string.action_clickContinue_Description),
+                Action(ActionEnum.ClickContinue,""),ActionDescription.ActionContentType.Continue))
+
+
 
             return result
 

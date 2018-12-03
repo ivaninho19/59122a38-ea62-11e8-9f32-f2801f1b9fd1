@@ -14,7 +14,7 @@ import first.boappok.com.boappok.Model.Action
 import first.boappok.com.boappok.Model.ActionDescription
 import first.boappok.com.boappok.R
 
-class ComposerItemsAdapter(private val myDataset: ArrayList<ActionDescription>,private val itemAddObserver : ObservableField<Action>) :
+class ComposerItemsAdapter(private val myDataset: ArrayList<ActionDescription>,private val itemAddObserver : ObservableField<ActionDescription>) :
     RecyclerView.Adapter<ComposerItemsAdapter.MyViewHolder>() {
 
     // Provide a reference to the views for each data item
@@ -44,7 +44,7 @@ class ComposerItemsAdapter(private val myDataset: ArrayList<ActionDescription>,p
 
         //Add action
         holder.layout.findViewById<Button>(R.id.BTAddAction).setOnClickListener {
-            itemAddObserver.set(myDataset.get(position).action)
+            itemAddObserver.set(myDataset.get(position))
         }
 
         when(myDataset.get(position).actionContentType)

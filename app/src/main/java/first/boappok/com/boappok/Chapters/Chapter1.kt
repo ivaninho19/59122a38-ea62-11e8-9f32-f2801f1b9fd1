@@ -4,10 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.databinding.Observable
 import android.view.View
-import first.boappok.com.boappok.Model.Action
-import first.boappok.com.boappok.Model.ActionEnum
-import first.boappok.com.boappok.Model.Chapter
-import first.boappok.com.boappok.Model.Scene
+import first.boappok.com.boappok.Model.*
 import first.boappok.com.boappok.R
 import java.util.*
 
@@ -20,9 +17,26 @@ class Chapter1 {
     var activity : Activity? = null
 
 
+    constructor(actions : List<ActionCreator>,view:View,ctx:Context,activity: Activity)
+    {
+        var FirstScene  = Scene(view,ctx)
+
+        this.activity = activity
+
+        for (item in actions)
+        {
+            FirstScene.AddAction(item.actionDescription.action as Action)
+
+        }
+
+        sceneList.add(FirstScene)
+
+        nextScene()
+
+    }
 
 
-    constructor(ctx: Context?,view : View?,activity:Activity)
+    /*constructor(ctx: Context?,view : View?,activity:Activity)
     {
         this.ctx = ctx
         this.view = view
@@ -31,7 +45,7 @@ class Chapter1 {
         generateScenes()
 
         nextScene()
-    }
+    }*/
 
 
     private fun generateScenes()

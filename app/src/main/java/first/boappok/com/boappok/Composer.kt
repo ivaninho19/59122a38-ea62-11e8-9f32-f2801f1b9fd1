@@ -65,8 +65,7 @@ open class Composer {
         tv.setDelay(100)
         tv.animateText(action.resource as String)
         //tv.setTextColor(ctx?.resources?.getColor(R.color.white) as Int)
-
-
+        
         action.actionCompleted.set(true)
 
     }

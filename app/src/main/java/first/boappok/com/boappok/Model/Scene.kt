@@ -28,6 +28,7 @@ open class Scene {
 
     open fun AddAction (action: Action)
     {
+        action.actionCompleted.set(false)
         listAction.add(action)
     }
 
@@ -36,7 +37,7 @@ open class Scene {
     {
 
 
-        var action_ = listAction.elementAt(countAction);
+        var action_ = listAction.elementAt(countAction)
 
         action_.actionCompleted.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
             override fun onPropertyChanged(p0: Observable?, p1: Int) {
